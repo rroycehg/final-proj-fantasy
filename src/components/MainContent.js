@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import CharWheel from "./Charwheel";
+import CharWheel from "./CharWheel";
 
 function MainContent() {
-	const [characters, setCharacters] = useState("");
+	const [characters, setCharacters] = useState([]);
 
 	useEffect(() => {
 		async function fetchChar() {
@@ -11,14 +11,13 @@ function MainContent() {
 			);
 			if (res.ok) {
 				const data = await res.json();
-				console.log(data);
 				setCharacters(data);
 			}
 		}
 		fetchChar();
 	}, []);
 
-	return <CharWheel />;
+	return <CharWheel characters={characters} />;
 }
 
 export default MainContent;
