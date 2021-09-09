@@ -11,7 +11,7 @@ function MainContent() {
   useEffect(() => {
     async function fetchChar() {
       const res = await fetch(
-        `https://secret-eyrie-33623.herokuapp.com/characters`
+        `https://cryptic-temple-46708.herokuapp.com/characters`
       );
       if (res.ok) {
         const data = await res.json();
